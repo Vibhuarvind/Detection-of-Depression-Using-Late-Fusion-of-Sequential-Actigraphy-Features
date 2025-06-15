@@ -1,28 +1,18 @@
-# Detection-of-Depression-Using-Late-Fusion-of-Sequential-Actigraphy-Features
-Analyzed time-series data (Depressjon) to detect depression from patient activity recorded via clinical actigraphy watches. Utilized features such as time domain, statistical metrics, and LSTM-extracted attributes.
-
-Done under the supervision of Dr. Anshika Arora & Ankur Maurya (Assistant Professors at Bennett University)
-
-## Dataset :
-https://datasets.simula.no/depresjon/
-
-## Paper Pubished :
-https://doi.org/10.1016/B978-0-443-32862-6.00009-2
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Feature Extraction & Classification Pipeline</title>
+  <title>Detection of Depression Using Late Fusion of Sequential Actigraphy Features</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 40px;
       max-width: 900px;
+      color: #333;
     }
     h1, h2, h3 {
-      color: #333;
+      color: #2c3e50;
     }
     code, pre {
       background-color: #f4f4f4;
@@ -34,13 +24,36 @@ https://doi.org/10.1016/B978-0-443-32862-6.00009-2
     ul {
       margin-top: 0;
     }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <h1>🧠 Feature Extraction & Classification Pipeline</h1>
+  <h1>🧠 Detection of Depression Using Late Fusion of Sequential Actigraphy Features</h1>
 
-  <p>This project presents a complete workflow for extracting meaningful features from time-series data and using machine learning models to classify them. It includes both statistical/time-domain and LSTM-derived features, feature fusion, and model evaluation.</p>
+  <p>This project analyzes time-series data from the <strong>Depresjon dataset</strong> to detect signs of depression based on patients' physical activity recorded via clinical actigraphy watches.</p>
+
+  <p>We employ a combination of traditional time-domain and statistical features with deep learning-based LSTM features, using late fusion strategies to improve classification accuracy.</p>
+
+  <p><strong>Supervised by:</strong> Dr. Anshika Arora & Mr. Ankur Maurya (Assistant Professors, Bennett University)</p>
+
+  <h2>📁 Dataset</h2>
+  <p>Publicly available at: 
+    <a href="https://datasets.simula.no/depresjon/" target="_blank">https://datasets.simula.no/depresjon/</a>
+  </p>
+
+  <h2>📄 Published Paper</h2>
+  <p>Read the publication at: 
+    <a href="https://doi.org/10.1016/B978-0-443-32862-6.00009-2" target="_blank">
+      https://doi.org/10.1016/B978-0-443-32862-6.00009-2
+    </a>
+  </p>
 
   <hr>
 
@@ -48,39 +61,39 @@ https://doi.org/10.1016/B978-0-443-32862-6.00009-2
 
   <h3>1. Day-wise Statistical & Time-Domain Features</h3>
   <ul>
-    <li>Extracts core time-based features for each day (mean, std, skewness, etc.)</li>
+    <li>Mean, standard deviation, min/max values, skewness, etc.</li>
   </ul>
 
-  <h3>2. LSTM-based Features</h3>
+  <h3>2. LSTM-based Sequential Features</h3>
   <ul>
-    <li>Sequence modeling using LSTM to generate high-level deep features</li>
+    <li>Learned representations using LSTM layers to capture temporal dependencies</li>
   </ul>
 
   <h3>3. Late Feature Fusion</h3>
   <ul>
-    <li>Combines traditional statistical features and LSTM features at a later stage</li>
+    <li>Combines statistical and LSTM-based features during or after model training</li>
   </ul>
 
-  <h3>4. Single-Day Features</h3>
+  <h3>4. Single-Day Feature Baseline</h3>
   <ul>
-    <li>Experiments with features derived from only one day’s data for baseline comparison</li>
+    <li>Baseline analysis using features from a single day of activity</li>
   </ul>
 
   <hr>
 
-  <h2>🧪 Final Task: Model Training & Evaluation</h2>
+  <h2>🧪 Final Task: Classification & Evaluation</h2>
 
-  <p>The extracted features are used to train and compare the following classifiers:</p>
+  <p>Various classifiers were trained and evaluated:</p>
 
   <ul>
-    <li><strong>On Statistical + Time-Domain Features (TDF):</strong>
+    <li><strong>Using Time-Domain + Statistical Features:</strong>
       <ul>
         <li>Random Forest</li>
         <li>AdaBoost</li>
-        <li>SVM</li>
+        <li>Support Vector Machine (SVM)</li>
       </ul>
     </li>
-    <li><strong>On LSTM Features:</strong>
+    <li><strong>Using LSTM Features:</strong>
       <ul>
         <li>Random Forest</li>
         <li>AdaBoost</li>
@@ -88,38 +101,31 @@ https://doi.org/10.1016/B978-0-443-32862-6.00009-2
     </li>
     <li><strong>Late Fusion Model:</strong>
       <ul>
-        <li>Combines predictions or features from both above sets</li>
+        <li>Combined classification using both feature sets</li>
       </ul>
     </li>
   </ul>
 
-  <p>All models are evaluated and compared for accuracy, robustness, and consistency.</p>
+  <p>Performance is compared across models to assess effectiveness of different feature types and fusion strategies.</p>
 
   <hr>
 
-  <h2>🔁 Workflow Overview</h2>
+  <h2>🔁 Workflow Pipeline</h2>
 
   <pre>
-Data Preprocessing
-      ↓
-Normalization (reduce bias)
-      ↓
-Feature Extraction (Statistical + LSTM)
-      ↓
-Feature Normalization
-      ↓
-Feature Fusion
-      ↓
-Dimensionality Reduction
-      ↓
-Feature Selection
-      ↓
-Classification (RF, AdaBoost, SVM)
+1. Data Preprocessing
+2. Normalization (to reduce bias)
+3. Feature Extraction (Statistical + LSTM)
+4. Feature Normalization
+5. Feature Fusion (late-stage)
+6. Dimensionality Reduction
+7. Feature Selection
+8. Classification (RF, AdaBoost, SVM)
   </pre>
 
   <ul>
-    <li><strong>Cross-validation:</strong> Stratified K-Fold</li>
-    <li><strong>Hyperparameter Tuning:</strong> Grid Search</li>
+    <li><strong>Cross-Validation:</strong> Stratified K-Fold</li>
+    <li><strong>Hyperparameter Tuning:</strong> Grid Search for robust model parameters</li>
   </ul>
 
   <hr>
@@ -127,51 +133,50 @@ Classification (RF, AdaBoost, SVM)
   <h2>📂 Project Structure</h2>
 
   <pre>
-├── data/                # Input data
+├── data/                # Raw and processed data
 ├── src/                 # Source code
 │   ├── visualization/   # Data and result visualizations
 │   ├── features/        # Feature extraction scripts
 │   ├── models/          # Model training and evaluation
 │   └── utils/           # Helper functions
-├── results/             # Accuracy curves and evaluation outputs
+├── results/             # Accuracy curves and evaluation metrics
 ├── README.md            # Project documentation
   </pre>
 
   <hr>
 
-  <h2>📄 Code Modules (Documentation)</h2>
+  <h2>📄 Code Modules</h2>
 
   <ol>
-    <li><strong>Visualization</strong> – Raw data, feature distributions, model performance</li>
-    <li><strong>Feature Extraction</strong> – Statistical and LSTM feature generation</li>
-    <li><strong>Model Creation</strong> – Training, validation, tuning scripts</li>
-    <li><strong>Accuracy Curves</strong> – Plots showing model performance</li>
+    <li><strong>Visualization</strong> – Activity data plots and model accuracy curves</li>
+    <li><strong>Feature Extraction</strong> – Scripts for extracting time-domain and LSTM-based features</li>
+    <li><strong>Model Creation</strong> – ML models with tuning and training logic</li>
+    <li><strong>Accuracy Curves</strong> – Performance comparison graphs</li>
   </ol>
 
   <hr>
 
   <h2>📊 Model Comparison</h2>
 
-  <p>This project includes a thorough comparison of:</p>
+  <p>Extensive comparison across:</p>
   <ul>
-    <li>Individual feature sets</li>
-    <li>Combined feature sets</li>
-    <li>Different classification models</li>
+    <li>Traditional vs LSTM features</li>
+    <li>Late-fused models vs individual models</li>
+    <li>Impact of single-day vs full-window features</li>
   </ul>
 
-  <p>Helps assess how different features and fusion strategies impact performance.</p>
+  <p>The goal is to determine the most robust approach to detecting depressive symptoms via wearable data.</p>
 
   <hr>
 
-  <h2>🚀 Future Improvements</h2>
+  <h2>🚀 Future Enhancements</h2>
 
   <ul>
-    <li>Add attention mechanism to LSTM for temporal focus</li>
-    <li>Explore other fusion techniques (e.g., early fusion, attention-based)</li>
-    <li>Use feature importance from models for feature selection</li>
+    <li>Incorporate attention mechanism in LSTM</li>
+    <li>Test early or hybrid fusion approaches</li>
+    <li>Explore ensemble models with weighted fusion strategies</li>
+    <li>Integrate feature importance rankings for selection</li>
   </ul>
 
 </body>
 </html>
-
-
