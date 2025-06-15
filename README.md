@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Detection of Depression Using Late Fusion of Sequential Actigraphy Features</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-      max-width: 900px;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    code, pre {
-      background-color: #f4f4f4;
-      padding: 10px;
-      display: block;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-    ul {
-      margin-top: 0;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+
 
   <h1>🧠 Detection of Depression Using Late Fusion of Sequential Actigraphy Features</h1>
 
