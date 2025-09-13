@@ -1,0 +1,43 @@
+
+Feature Exrtaction:
+
+1. daywise stat features and time domain
+
+2. lstm extraxted feat
+
+3. late feat fusion
+
+4. 1 day feature only
+
+final task:
+
+random forest , adaboost and svm on tdf , stat features
+random forest , adaboost  on lstm features also
+and do late fusion of both 
+
+model comparison different and combining scores from different feature set
+
+____________________________
+flow:
+
+preprocess data
+normalise the data to reduce biasness
+feature extraction
+feature normalization
+feature fusion
+dimension reduction
+feature selection - 
+classfination
+
+stratified k fold 
+cross validation score
+train
+hyperparamter tuning - grid search - konse hyper h jo model ko robust
+
+
+DOCUMENTATION OF CODE ONLY:
+
+1. Visualization
+2. Feature extraction
+3. Model creation
+4. Accuracy curve
